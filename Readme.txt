@@ -5,13 +5,13 @@ Technical requrements for Multi Language Search(find name for brand):
 
 Architecture?
 
-Java Server?
+Java Server? Jetty for fast development cycle is the best
 
 
 Step by step:
-1) Visitor must select languages(next feature - countries) to search from on the first screen(save selection in cookies or another good place)
-2) Visitor enters search phrase on his/her main language
+1. Visitor must select languages(next feature - countries) to search from on the first screen(save selection in cookies or another good place)
+ 1.2 Visitor enters search phrase on his/her main language
     - phrase will be translated automatically to languages selected previously
     - MLS will perform search for every translation and for original phrase
-3) List of results is shown in very usable and convinient form in the browser with paging. 
+2. List of results is shown in very usable and convinient form in the browser with paging. 
    - paging (first/last << < 1 2 3 4 ... n > >>  next/previous )

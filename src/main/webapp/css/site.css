@@ -1,12 +1,17 @@
-
 ul.columns {
-    -moz-column-count: 5;
-    list-style: none outside none;
-    margin: 0;
-    max-width: 810px;
-    padding: 0;
+	-moz-column-count: 5;
+	-webkit-column-count: 5;
+	column-count: 5;
+	list-style: none;
+	margin: 0;
+	max-width: 810px;
+	padding: 0
 }
 
-div.t-zone{
+ul.columns li {
+	margin: 0 10px
+}
+
+div.t-zone {
 	height: 700px;
 }
