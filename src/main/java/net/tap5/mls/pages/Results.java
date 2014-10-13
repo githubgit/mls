@@ -11,7 +11,6 @@ import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.internal.TapestryInternalUtils;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
@@ -34,24 +33,22 @@ public class Results {
 	private Messages messages;
 
 	@Property
-	private List<TabItem> tabList;
+	private List<TabItem> tabs = new ArrayList<>();
 
 	public void onActivate() {
-		tabList = new ArrayList<>();
 
 		for (GoogleTranslateLanguages lang : selectedLanguages) {
 
-			TabItem tabItem = new TabItem(lang.toString(), TapestryInternalUtils.getLabelForEnum(messages,
-					GoogleTranslateLanguages.class.getSimpleName(), lang), "Content of TabItem1");
-
-			tabList.add(tabItem);
+			TabItem tabItem = new TabItem(lang.toString(), lang.name(), "Content of " + lang.name() + " tab");
+			System.out.println(lang.name());
+			tabs.add(tabItem);
 		}
 	}
 
-	public List getTabs() {
-
-		return tabList;
-	}
+	// public Set getTabs() {
+	//
+	// return tabs;
+	// }
 
 	public void set(List<GoogleTranslateLanguages> selectedLanguages) {
 		this.selectedLanguages = selectedLanguages;

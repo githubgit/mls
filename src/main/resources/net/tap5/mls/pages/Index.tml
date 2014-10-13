@@ -12,7 +12,6 @@
             
 
             </t:form>
-		
 
     <p>The current time is: <strong>${currentTime}</strong></p>
 

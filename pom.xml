@@ -83,10 +83,10 @@
 			<version>1.8.0.7</version>
 		</dependency>
 		<dependency>
-	      <groupId>com.google.apis</groupId>
-	      <artifactId>google-api-services-oauth2</artifactId>
-	      <version>v1-rev80-1.19.0</version>
-	    </dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-translate</artifactId>
+			<version>v2-rev36-1.19.0</version>
+		</dependency>
 
 	</dependencies>
 	<build>

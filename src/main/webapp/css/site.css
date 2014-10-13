@@ -15,3 +15,7 @@ ul.columns li {
 div.t-zone {
 	height: 700px;
 }
+
+.json {
+	background: none repeat scroll 0 0 #ccc;
+}

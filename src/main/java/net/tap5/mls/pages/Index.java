@@ -18,6 +18,8 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.TypeCoercer;
+import org.apache.tapestry5.services.PageRenderLinkSource;
+import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.util.EnumSelectModel;
 import org.apache.tapestry5.util.EnumValueEncoder;
 
@@ -50,6 +52,10 @@ public class Index {
 	private Messages messages;
 	@Inject
 	TypeCoercer typeCoercer;
+	@Inject
+	Request request;
+	@Inject
+	PageRenderLinkSource linkSource;
 
 	public ValueEncoder<GoogleTranslateLanguages> getEncoder() {
 		return new EnumValueEncoder<GoogleTranslateLanguages>(typeCoercer, GoogleTranslateLanguages.class);
@@ -61,7 +67,7 @@ public class Index {
 
 	Object onSuccessFromSearch() {
 		if (selectedLanguages == null)
-			selectedLanguages = Collections.EMPTY_LIST;
+			selectedLanguages = Collections.emptyList();
 
 		resultsPage.set(selectedLanguages);
 

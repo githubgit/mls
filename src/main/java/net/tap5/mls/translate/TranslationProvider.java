@@ -1,8 +1,8 @@
 package net.tap5.mls.translate;
 
+import net.tap5.mls.constants.GoogleTranslateLanguages;
+
 
 public interface TranslationProvider {
-	public String autodetect(final String phrase);
-
-	public String translate(String from, String to, String phrase);
+	public TranslationDTO translate(final GoogleTranslateLanguages to, final String phrase);
 }
