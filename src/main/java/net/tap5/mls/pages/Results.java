@@ -14,9 +14,6 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
-/**
- * Content copied from wikipedia
- */
 public class Results {
 	@PageActivationContext
 	@Property
@@ -44,11 +41,6 @@ public class Results {
 			tabs.add(tabItem);
 		}
 	}
-
-	// public Set getTabs() {
-	//
-	// return tabs;
-	// }
 
 	public void set(List<GoogleTranslateLanguages> selectedLanguages) {
 		this.selectedLanguages = selectedLanguages;

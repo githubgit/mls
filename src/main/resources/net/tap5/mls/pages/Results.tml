@@ -2,7 +2,7 @@
    
    <t:tabGroup active="resultTab">
       <t:Loop t:source="tabs" value="tabItem">
-        <t:tab name="${tabItem.name}" label="${tabItem.label}"><t:outputraw value="${tabItem.content}"/></t:tab>
+        <t:tab name="${tabItem.name}" label="${tabItem.label}">${tabItem.content}</t:tab>
       </t:Loop>
    </t:tabGroup>
    
