@@ -1,10 +1,11 @@
 <html t:type="layout" title=""
       t:sidebarTitle="Framework Version"
-      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
 		
 			<t:form t:id="search">
-			<input type="text" value="" style="width: 800px; margin-right: 10px;"/>
+			<t:errors/>
+			<input t:type="TextField" t:id="phrase" t:validate="required" style="width: 800px; margin-right: 10px;"/>
 			<input type="submit" value="Search"/>
 			<ul class="columns">
             <t:checklist t:id="languages" t:selected="selectedLanguages" encoder="encoder" model="model"/>

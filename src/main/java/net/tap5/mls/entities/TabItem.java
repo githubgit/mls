@@ -1,37 +1,27 @@
 package net.tap5.mls.entities;
 
 public class TabItem{
-	   private String name;
-	   private String label;
-	   private String content;
-	   
-	   public TabItem(String name, String label, String content){
-		   this.name = name;
-		   this.label = label;
-		   this.content = content;
-	   }
-	   
-	   public String getName() {
-			return name;
-		}
+	private String name;
+	private String content;
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	public TabItem(final String name, final String content) {
+		this.name = name;
+		this.content = content;
+	}
 
-		public String getLabel() {
-			return label;
-		}
+	public String getName() {
+		return name;
+	}
 
-		public void setLabel(String label) {
-			this.label = label;
-		}
+	public void setName(final String name) {
+		this.name = name;
+	}
 
-		public String getContent() {
-			return content;
-		}
+	public String getContent() {
+		return content;
+	}
 
-		public void setContent(String content) {
-			this.content = content;
-		}
+	public void setContent(final String content) {
+		this.content = content;
+	}
 }

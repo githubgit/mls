@@ -7,7 +7,7 @@ import java.util.Collection;
 
 import net.tap5.mls.constants.GoogleLanguagesCodes;
 import net.tap5.mls.constants.GoogleTranslateLanguages;
-import net.tap5.mls.translate.NakedGoogleJSon;
+import net.tap5.mls.translate.FlatGoogleJSon;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
@@ -147,9 +147,9 @@ public final class GoogleAuthHelper {
 
 			System.out.println(json);
 			// find detected lang
-			String code = NakedGoogleJSon.getDetectedLanguage(json);
+			String code = FlatGoogleJSon.getDetectedLanguage(json);
 			String language = GoogleLanguagesCodes.getLanguage(code);
-			String translation = NakedGoogleJSon.getTranslation(json);
+			String translation = FlatGoogleJSon.getTranslation(json);
 
 			System.out.println(language);
 			System.out.println(translation);

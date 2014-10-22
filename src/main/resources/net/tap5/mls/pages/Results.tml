@@ -1,10 +1,40 @@
-<t:layout title="" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+<t:layout title=""
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<body class="container">
+     
+    <noscript class="js-required">
+        ${message:javascript_required}
+    </noscript>   
    
-   <t:tabGroup active="resultTab">
-      <t:Loop t:source="tabs" value="tabItem">
-        <t:tab name="${tabItem.name}" label="${tabItem.label}">${tabItem.content}</t:tab>
-      </t:Loop>
-   </t:tabGroup>
+   <div><h3>Search for</h3>
+   		<p>${phrase}</p>
+   </div>
+      
+   <div class="eg">
+    
+        <!--  The row(s) of tabs. -->
+        <ul class="nav nav-tabs" t:id="tabs" t:type="any">
+            <t:loop source="langs" value="dto" index="index">
+                <li class="${tabCssClass}">
+                    <a href="#tab${dto.langCode}" data-toggle="tab">${dto.langName}</a>
+                </li>
+            </t:loop>
+        </ul>
+        
+        <!-- The contents of each tab. -->
+        
+        <div class="tab-content">
+            <t:loop source="langs" value="dto" index="index">
+                <div class="tab-pane ${tabPaneCssClass}" id="tab${dto.langCode}">
+                    <t:beandisplay object="dto" include="translation"/>
+                </div>
+            </t:loop>
+        </div>
+        
+    </div>
    
-   
+</body>
 </t:layout>

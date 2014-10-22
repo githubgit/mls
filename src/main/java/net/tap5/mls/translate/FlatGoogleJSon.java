@@ -1,7 +1,7 @@
 package net.tap5.mls.translate;
 
 
-public class NakedGoogleJSon {
+public class FlatGoogleJSon {
 	public static final String END_OF_STRING = "\",";
 
 	public static String getDetectedLanguage(String json) {

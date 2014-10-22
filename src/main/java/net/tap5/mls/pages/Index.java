@@ -18,14 +18,9 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.ioc.services.TypeCoercer;
-import org.apache.tapestry5.services.PageRenderLinkSource;
-import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.util.EnumSelectModel;
 import org.apache.tapestry5.util.EnumValueEncoder;
 
-/**
- * Start page of application mls.
- */
 public class Index {
 	@Property
 	@Inject
@@ -40,6 +35,9 @@ public class Index {
 	}
 
 	// //////////////////////////////////////////////////////////////////
+	@Property
+	private String phrase;
+
 
 	@Property
 	@Persist(PersistenceConstants.SESSION)
@@ -51,11 +49,7 @@ public class Index {
 	@Inject
 	private Messages messages;
 	@Inject
-	TypeCoercer typeCoercer;
-	@Inject
-	Request request;
-	@Inject
-	PageRenderLinkSource linkSource;
+	private TypeCoercer typeCoercer;
 
 	public ValueEncoder<GoogleTranslateLanguages> getEncoder() {
 		return new EnumValueEncoder<GoogleTranslateLanguages>(typeCoercer, GoogleTranslateLanguages.class);
@@ -69,7 +63,9 @@ public class Index {
 		if (selectedLanguages == null)
 			selectedLanguages = Collections.emptyList();
 
-		resultsPage.set(selectedLanguages);
+		resultsPage.setLanguages(selectedLanguages);
+
+		resultsPage.setPhrase(phrase);
 
 		return resultsPage;
 	}
