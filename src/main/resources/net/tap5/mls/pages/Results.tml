@@ -1,5 +1,5 @@
 
-<t:layout title=""
+<html title=""
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter">
 
@@ -37,4 +37,4 @@
     </div>
    
 </body>
-</t:layout>
+</html>

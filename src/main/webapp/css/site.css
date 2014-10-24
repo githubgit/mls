@@ -3,7 +3,7 @@ ul.columns {
 	-webkit-column-count: 5;
 	column-count: 5;
 	list-style: none;
-	margin: 0;
+	margin: 10px;
 	max-width: 810px;
 	padding: 0
 }
@@ -18,4 +18,18 @@ div.t-zone {
 
 .json {
 	background: none repeat scroll 0 0 #ccc;
+}
+
+.searchfield {
+	width: 800px;
+	margin-right: 10px;
+	display: inline;
+}
+
+.checkbox {
+    display: inline;
+}
+
+.container {
+margin-top: 30px;
 }

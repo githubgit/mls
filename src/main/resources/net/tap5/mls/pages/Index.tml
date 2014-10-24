@@ -1,22 +1,26 @@
-<html t:type="layout" title=""
+<html title=""
       t:sidebarTitle="Framework Version"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
       xmlns:p="tapestry:parameter">
-		
-			<t:form t:id="search">
-			<t:errors/>
-			<input t:type="TextField" t:id="phrase" t:validate="required" style="width: 800px; margin-right: 10px;"/>
-			<input type="submit" value="Search"/>
-			<ul class="columns">
-            <t:checklist t:id="languages" t:selected="selectedLanguages" encoder="encoder" model="model"/>
-            </ul>
-            
 
+	<body class="container">
+     
+    <noscript class="js-required">
+        ${message:javascript_required}
+    </noscript> 
+
+			<t:form t:id="search">
+				<t:errors/>
+				<input t:type="TextField" t:id="phrase" t:validate="required" class="searchfield"/>
+				<input type="submit" value="Search"/>
+				<ul class="columns">
+	            	<t:checklist t:id="languages" t:validate="required" t:selected="selectedLanguages" encoder="encoder" model="model"/>
+	            </ul>
             </t:form>
 
     <p>The current time is: <strong>${currentTime}</strong></p>
 
-    <p:sidebar>
+    <!--  p:sidebar>
         <p>
             You are running Tapestry version <strong>${tapestryVersion}</strong>.
         </p>
@@ -28,5 +32,6 @@
             ]
         </p>
     </p:sidebar>
-
+-->
+	</body>
 </html>

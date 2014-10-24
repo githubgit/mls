@@ -11,6 +11,7 @@ import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.alerts.AlertManager;
+import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
@@ -21,6 +22,7 @@ import org.apache.tapestry5.ioc.services.TypeCoercer;
 import org.apache.tapestry5.util.EnumSelectModel;
 import org.apache.tapestry5.util.EnumValueEncoder;
 
+@Import(stylesheet = "context:css/site.css")
 public class Index {
 	@Property
 	@Inject
