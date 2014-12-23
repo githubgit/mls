@@ -15,7 +15,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 
 @WebService
-public class GoogleTranslation implements TranslationProvider {
+public class GoogleTranslationProvider implements TranslationProvider {
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
 	@Override
@@ -43,7 +43,7 @@ public class GoogleTranslation implements TranslationProvider {
 
 			String json = request.execute().parseAsString();
 
-			System.out.println(json);
+			//System.out.println(json);
 			// find detected lang
 			String detectedCode = FlatGoogleJSon.getDetectedLanguage(json);
 			String detecteLang = GoogleLanguagesCodes.getLanguage(detectedCode);

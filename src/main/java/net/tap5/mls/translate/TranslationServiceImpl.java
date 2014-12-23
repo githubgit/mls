@@ -8,7 +8,7 @@ import net.tap5.mls.constants.GoogleTranslateLanguages;
 
 public class TranslationServiceImpl implements TranslatorService {
 
-	TranslationProvider provider = new GoogleTranslation();
+	TranslationProvider provider = new GoogleTranslationProvider();
 
 	public TranslationServiceImpl() {
 	}

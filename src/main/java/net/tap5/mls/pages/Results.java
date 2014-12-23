@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.tap5.mls.constants.GoogleTranslateLanguages;
+import net.tap5.mls.search.SearchServiceImpl;
+import net.tap5.mls.search.SearchDTO;
+import net.tap5.mls.search.SearchService;
 import net.tap5.mls.translate.TranslationDTO;
 import net.tap5.mls.translate.TranslationServiceImpl;
 import net.tap5.mls.translate.TranslatorService;
@@ -44,6 +47,9 @@ public class Results {
 	private JavaScriptSupport javaScriptSupport;
 
 	private TranslatorService translationService = new TranslationServiceImpl();
+	private SearchService searchService = new SearchServiceImpl();
+
+	private List<SearchDTO> searchResults = new ArrayList<>(); 
 
 	void afterRender() {
 		javaScriptSupport.require("bootstrap/tab");
@@ -57,12 +63,16 @@ public class Results {
 		return index == 0 ? "fade in active" : "fade";
 	}
 
+	//when we are coming to this page
 	public void onActivate() {
 		if (!langs.isEmpty())
 			langs.clear();
-
+        //STEP 1 translation to every selected language
 		langs = translationService.translate(phrase, selectedLanguages);
-
+		
+		//STEP 2 performing search for every translation
+		searchResults = searchService.search(langs);
+		
 	}
 
 	public void setLanguages(final List<GoogleTranslateLanguages> selectedLanguages) {
